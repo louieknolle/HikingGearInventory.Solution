@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HikingGear.Models.Gear
+
+<h4>Add a new piece of gear</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Brand)
+  @Html.TextBoxFor(model => model.Brand)
+  @Html.LabelFor(model => model.Model)
+  @Html.TextBoxFor(model => model.Model)
+
+  @Html.Label("Select category")
+  @Html.DropDownList("CategoryId")
+
+  <input type="submit" value="Add new gear" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all gear", "Index")</p>

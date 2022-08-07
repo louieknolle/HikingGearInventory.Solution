@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HikingGear.Models.Gear
+
+<h2>Are you sure you want to delete this?</h2>
+
+@Html.DisplayNameFor(model => model.Brand): @Html.DisplayFor(model => model.Brand)
+@Html.DisplayNameFor(model => model.Model): @Html.DisplayFor(model => model.Model)
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Delete" />
+}
+@Html.ActionLink("Back to List", "Index")

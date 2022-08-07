@@ -1,0 +1,36 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HikingGear.Models.Gear
+
+<h2>Gear Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Brand): @Html.DisplayFor(model => model.Brand)</h3>
+<h3>@Html.DisplayNameFor(model => model.Model): @Html.DisplayFor(model => model.Model)</h3>
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This gear does not belong to any categories</p>
+}
+else
+{
+  <h4>Categories the gear belongs to:</h4>
+  <ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <li>@join.Category.Name</li>
+    @using (Html.BeginForm("DeleteCategory", "Gears"))
+    {
+      @Html.Hidden("joinId", @join.CategoryItemId)
+      <input type="submit" value="Delete"/>
+    }
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("Add a Category", "AddCategory", new { id = Model.GearId })</p>
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Edit Gear", "Edit", new { id = Model.GearId })</p>
+<p>@Html.ActionLink("Delete Gear", "Delete", new { id = Model.GearId })</p>

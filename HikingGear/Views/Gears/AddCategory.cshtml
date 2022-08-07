@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HikingGear.Models.Gear
+
+<h2>Add a category</h2>
+
+<h4>Select category for this gear: @Html.DisplayFor(model => model.Brand) @Html.DisplayFor(model => model.Model) </h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.GearId)
+
+  @Html.Label("Select category")
+  @Html.DropDownList("CategoryId")
+
+  <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>

@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HikingGear.Models.Gear
+
+<h2>Edit</h2>
+
+<h4>Edit this gear: @Html.DisplayFor(model => model.Brand) @Html.DisplayFor(model => model.Model)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.GearId)
+
+  @Html.LabelFor(model => model.Brand)
+  @Html.EditorFor(model => model.Brand)
+  @Html.LabelFor(model => model.Model)
+  @Html.EditorFor(model => model.Model)
+
+  @Html.Label("Select category")
+  @Html.DropDownList("CategoryId")
+
+  <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
