@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace MVC_Database_Template.Controllers
+namespace HikingGear.Controllers
 {
     public class HomeController : Controller
     {
