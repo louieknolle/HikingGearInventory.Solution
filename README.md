@@ -22,4 +22,4 @@ _none_
 
 _MIT_
 
-Copyright (c) _July 27, 2022_ _Megan McKissack_
+Copyright (c) _August 2022_ _Louie Knolle_
