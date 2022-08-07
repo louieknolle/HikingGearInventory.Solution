@@ -20,5 +20,18 @@ namespace HikingGear.Controllers
       List<Category> model = _db.Categories.ToList();
       return View(model);
     }
+
+    public ActionResult Create()
+    {
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Create(Category category)
+    {
+      _db.Categories.Add(category);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
