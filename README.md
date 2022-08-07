@@ -1,4 +1,4 @@
-#### By _**Megan McKissack**_
+#### By _**Louie Knolle**_
 
 ## Description
 
