@@ -14,7 +14,8 @@
 
 @foreach (Gear gear in Model)
 {
-  <li>@Html.ActionLink($"{gear.Description}", "Details", new { id = gear.GearId })</li>
+  <li>@Html.ActionLink($"{gear.Name}" , "Details", new { id = gear.GearId })</li>
 }
 
 <p>@Html.ActionLink("Add new gear", "Create")</p>
+<p>@Html.ActionLink("Back to Categories List", "Index", "Categories")</p>

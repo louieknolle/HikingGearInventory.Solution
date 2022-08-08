@@ -11,7 +11,7 @@ namespace HikingGear.Models
 
     public int GearId { get; set; }
     public string Brand { get; set; }
-    public string Model { get; set; }
+    public string Name { get; set; }
     public int PurchaseYear { get; set; }
     public string Description { get; set; }
 

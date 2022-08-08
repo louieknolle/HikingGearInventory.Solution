@@ -10,7 +10,7 @@
 
 @if(@Model.JoinEntities.Count == 0)
 {
-  <p>This category does not contain pieces of gear</p>
+  <p>This category does not contain any pieces of gear</p>
 }
 else
 {
@@ -18,11 +18,12 @@ else
   <ul>
   @foreach(var join in Model.JoinEntities)
   {
-    <li>@join.Gear.Brand @join.Gear.Model</li>
+    <li>@Html.ActionLink($"{join.Gear.Name}" , "Details", "Gears", new { id = join.GearId} )</li>
   }
   </ul>
 }
 
+<p>@Html.ActionLink("Add new gear", "Create", "Gears")</p>
 <p>@Html.ActionLink("Back to gear categories", "Index")</p>
 <p>@Html.ActionLink("Edit Category", "Edit", new { id = Model.CategoryId })</p>
 <p>@Html.ActionLink("Delete Category", "Delete", new { id = Model.CategoryId })</p>

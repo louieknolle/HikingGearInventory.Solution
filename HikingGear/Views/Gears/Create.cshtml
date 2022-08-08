@@ -10,8 +10,12 @@
 {
   @Html.LabelFor(model => model.Brand)
   @Html.TextBoxFor(model => model.Brand)
-  @Html.LabelFor(model => model.Model)
-  @Html.TextBoxFor(model => model.Model)
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+  @Html.LabelFor(model => model.Description)
+  @Html.TextBoxFor(model => model.Description)
+  @Html.LabelFor(model => model.PurchaseYear)
+  @Html.TextBoxFor(model => model.PurchaseYear)
 
   @Html.Label("Select category")
   @Html.DropDownList("CategoryId")

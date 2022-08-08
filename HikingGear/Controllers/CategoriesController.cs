@@ -39,7 +39,7 @@ namespace HikingGear.Controllers
       var thisCategory = _db.Categories
           .Include(category => category.JoinEntities)
           .ThenInclude(join => join.Gear)
-          .FirstOrDefault(category => category.CategoryId == id)
+          .FirstOrDefault(category => category.CategoryId == id);
       return View(thisCategory);
     }
 

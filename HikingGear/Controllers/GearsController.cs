@@ -37,7 +37,8 @@ namespace HikingGear.Controllers
         _db.CategoryGear.Add(new CategoryGear() { CategoryId = CategoryId, GearId = gear.GearId });
         _db.SaveChanges();
       }
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "Categories", null);
+      
     }
 
     public ActionResult Details(int id)

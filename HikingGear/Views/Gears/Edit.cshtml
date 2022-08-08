@@ -6,7 +6,7 @@
 
 <h2>Edit</h2>
 
-<h4>Edit this gear: @Html.DisplayFor(model => model.Brand) @Html.DisplayFor(model => model.Model)</h4>
+<h4>Edit this gear: @Html.DisplayFor(model => model.Brand) @Html.DisplayFor(model => model.Name)</h4>
 
 @using (Html.BeginForm())
 {
@@ -14,8 +14,12 @@
 
   @Html.LabelFor(model => model.Brand)
   @Html.EditorFor(model => model.Brand)
-  @Html.LabelFor(model => model.Model)
-  @Html.EditorFor(model => model.Model)
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
+  @Html.LabelFor(model => model.Description)
+  @Html.TextBoxFor(model => model.Description)
+  @Html.LabelFor(model => model.PurchaseYear)
+  @Html.TextBoxFor(model => model.PurchaseYear)
 
   @Html.Label("Select category")
   @Html.DropDownList("CategoryId")
