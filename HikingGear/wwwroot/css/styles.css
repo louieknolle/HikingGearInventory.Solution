@@ -7,7 +7,7 @@ header {
   margin: auto;
   width: 100%;
   height: auto;
-  max-height: 340px;
+  max-height: 240px;
   padding: 1rem 2rem;
   font-family: 'Shadows Into Light', cursive;
   font-size: 1.5rem;
@@ -83,8 +83,6 @@ button.accept-policy {
 html {
   position: relative;
   min-height: 100%;
-  
-
 }
 
 body {
@@ -97,9 +95,33 @@ body {
   z-index: 1;
 }
 
+h1, h2, h3, h4 {
+  margin-bottom: 7%;
+}
+
+label {
+  margin-right: 5%;
+  font-size: 1.5rem;
+}
+
+input {
+  background-color: white;
+  color: #A01631;
+  font-size: 1.5rem;
+}
+
+input:focus {
+  border-color: #16A085;
+}
+
+#Name:focus {
+  border-color: #16A085;
+}
+
 .viewContainer {
   font-family: 'Shadows Into Light', cursive;
   color: #8516A0;
+  font-size: 1.5rem;
 }
 
 .linksContainer {
@@ -111,7 +133,6 @@ body {
 
 .linksContainer a {
   text-decoration: none;
-  font-size: 1.25rem;
   color: #A01631;
 }
 
