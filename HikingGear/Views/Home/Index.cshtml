@@ -2,7 +2,11 @@
   Layout = "_Layout";
 }
 
-<div class="text-center">
-  <h1 class="display-4">Hiking Inventory </h1>
-  <p>@Html.ActionLink("See all gear categories", "Index", "Categories")</p>
+<div class="viewContainer">
+  <div class="text-left">
+    <h1 class="display-4">Welcome back!</h1>
+    <div class="linksContainer">
+      <p>@Html.ActionLink("See gear categories", "Index", "Categories", null, new {@class = "homeLink"})</p>
+    </div>
+  </div>
 </div>
