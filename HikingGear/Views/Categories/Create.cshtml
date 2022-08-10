@@ -8,9 +8,9 @@
   <h3>New category</h3>
   @using (Html.BeginForm())
   {
-    @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name)
-    <input type="submit" value="Add new category" />
+    <span class="labelSpan">@Html.LabelFor(model => model.Name)</span>
+    @Html.TextBoxFor(model => model.Name, new { @required = "required"})
+    <input type="submit" value="Add new category" class="addNewBtn" />
   }
 
   <div class="linksContainer">
