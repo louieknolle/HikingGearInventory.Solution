@@ -154,6 +154,11 @@ input:focus {
   color: #8516A0;
 }
 
+.createGearForm {
+  display: flex;
+  flex-direction: column;
+}
+
 .footer {
   position: absolute;
   bottom: 0;

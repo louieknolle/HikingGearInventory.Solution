@@ -4,22 +4,38 @@
 
 @model HikingGear.Models.Gear
 
-<h4>Add a new piece of gear</h4>
+<div class="viewContainer">
+  <h3>Add a new piece of gear</h3>
 
-@using (Html.BeginForm())
-{
-  @Html.LabelFor(model => model.Brand)
-  @Html.TextBoxFor(model => model.Brand)
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
-  @Html.LabelFor(model => model.Description)
-  @Html.TextBoxFor(model => model.Description)
-  @Html.LabelFor(model => model.PurchaseYear)
-  @Html.TextBoxFor(model => model.PurchaseYear)
+  <div class="createGearForm">
+    @using (Html.BeginForm())
+    {
+        <div>
+          @Html.LabelFor(model => model.Brand)
+          @Html.TextBoxFor(model => model.Brand)
+        </div>
+        <div>
+          @Html.LabelFor(model => model.Name)
+          @Html.TextBoxFor(model => model.Name)
+        </div>
+        <div>
+          @Html.LabelFor(model => model.Description)
+          @Html.TextBoxFor(model => model.Description)
+        </div>
+        <div>
+          @Html.LabelFor(model => model.PurchaseYear)
+          @Html.TextBoxFor(model => model.PurchaseYear)
+        </div>
+        <div>
+          @Html.Label("Select category")
+          @Html.DropDownList("CategoryId")
+        </div>
 
-  @Html.Label("Select category")
-  @Html.DropDownList("CategoryId")
+        <input type="submit" value="Add new gear" class="" />
+    }
+  </div>
 
-  <input type="submit" value="Add new gear" class="btn btn-default" />
-}
-<p>@Html.ActionLink("Show all gear", "Index")</p>
+  <div class="linksContainer">
+    <p>@Html.ActionLink("Show all gear", "Index")</p>
+  </div>
+</div>
