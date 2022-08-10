@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto+Mono&family=Shadows+Into+Light&display=swap');
 
 
 header {
@@ -9,7 +9,7 @@ header {
   height: auto;
   max-height: 240px;
   padding: 1rem 2rem;
-  font-family: 'Shadows Into Light', cursive;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.5rem;
   text-align: center;
 }
@@ -88,6 +88,7 @@ html {
 body {
   background-color: #F4D03F;
   background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
+  font-family: 'Roboto Condensed', sans-serif; 
 
 }
 
@@ -96,30 +97,61 @@ body {
 }
 
 h1, h2, h3, h4 {
-  margin-bottom: 7%;
+  margin-bottom: 5%;
+  font-family: 'Roboto Mono', monospace;
+
+}
+
+.createGearForm {
+  display: flex;
+  flex-direction: column;
+
 }
 
 label {
-  margin-right: 5%;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  width: 40%;
+  background-color: #ffffff59;
+  margin-right: 0;
+  border-radius: 20rem 0 0 20rem;
+  color: black;
+  padding-right: 0;
 }
 
-input {
-  background-color: white;
-  color: #A01631;
-  font-size: 1.5rem;
+input, select {
+  font-size: 1.25rem;
+  width: 40%;
+  background-color: #ffffff59;
+  margin-left: 0;
+  border-radius: 0 20rem 20rem 0;
+  color: black;
+  padding-left: 0;
 }
 
-input:focus {
-  border-color: #16A085;
+input[type="text" i] {
+  padding: 1px 2px;
 }
 
-#Name:focus {
-  border-color: #16A085;
+.formRow {
+  margin: auto;
+}
+
+#addNewGear {
+  border-radius: 20rem;
+  background-color: #ffffff59;
+  width: 20%;
+  justify-self: center;
+  display: block;
+  margin: auto;
+  margin-top: 5%;
+}
+
+.labelSpan {
+  text-align: right;
+  width: 50%;
 }
 
 .viewContainer {
-  font-family: 'Shadows Into Light', cursive;
   color: #8516A0;
   font-size: 1.5rem;
 }

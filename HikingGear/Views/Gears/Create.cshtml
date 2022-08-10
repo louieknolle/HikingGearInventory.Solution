@@ -10,28 +10,28 @@
   <div class="createGearForm">
     @using (Html.BeginForm())
     {
-        <div>
-          @Html.LabelFor(model => model.Brand)
-          @Html.TextBoxFor(model => model.Brand)
+        <div class="formRow">
+          <span class="labelSpan">@Html.LabelFor(model => model.Brand)</span>
+          <span class="inputSpan">@Html.TextBoxFor(model => model.Brand, new { @required = "required"})</span>
         </div>
-        <div>
-          @Html.LabelFor(model => model.Name)
-          @Html.TextBoxFor(model => model.Name)
+        <div class="formRow">
+          <span class="labelSpan">@Html.LabelFor(model => model.Name)</span>
+          <span class="inputSpan">@Html.TextBoxFor(model => model.Name, new { @required = "required"})</span>
         </div>
-        <div>
-          @Html.LabelFor(model => model.Description)
-          @Html.TextBoxFor(model => model.Description)
+        <div class="formRow">
+          <span class="labelSpan">@Html.LabelFor(model => model.Description)</span>
+          <span class="inputSpan">@Html.TextBoxFor(model => model.Description, new { @required = "required"})</span>
         </div>
-        <div>
-          @Html.LabelFor(model => model.PurchaseYear)
-          @Html.TextBoxFor(model => model.PurchaseYear)
+        <div class="formRow">
+          <span class="labelSpan">@Html.LabelFor(model => model.PurchaseYear)</span>
+          <span class="inputSpan">@Html.TextBoxFor(model => model.PurchaseYear, new { @required = "required"})</span>
         </div>
-        <div>
-          @Html.Label("Select category")
-          @Html.DropDownList("CategoryId")
+        <div class="formRow">
+          <span class="labelSpan">@Html.Label("Select category")</span>
+          <span class="inputSpan">@Html.DropDownList("CategoryId")</span>
         </div>
 
-        <input type="submit" value="Add new gear" class="" />
+        <input type="submit" value="Add new gear" id="addNewGear" />
     }
   </div>
 
