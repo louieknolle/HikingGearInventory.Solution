@@ -9,25 +9,29 @@
   <hr />
   <h3>@Html.DisplayFor(model => model.Name)</h3>
 
-  @if(@Model.JoinEntities.Count == 0)
-  {
-    <p>This category does not contain any pieces of gear</p>
-  }
-  else
-  {
-    <!-- <h4>Contents:</h4> -->
-    <ul>
-    @foreach(var join in Model.JoinEntities)
+  <div class="row">
+    @if(@Model.JoinEntities.Count == 0)
     {
-      <li class="catList">@Html.ActionLink($"{join.Gear.Name}" , "Details", "Gears", new { id = join.GearId}, new {@class = "catList"} )</li>
+      <p>This category does not contain any pieces of gear</p>
     }
-    </ul>
-  }
+    else
+      {
+      
+        <div class="col-md">
+          <ul>
+          @foreach(var join in Model.JoinEntities)
+          {
+            <li class="catList">@Html.ActionLink($"{join.Gear.Name}" , "Details", "Gears", new { id = join.GearId}, new {@class = "catList"} )</li>
+          }
+          </ul>
+        </div>
+      }
 
-  <div class="linksContainer">
-    <p>@Html.ActionLink("Add new gear", "Create", "Gears")</p>
-    <p>@Html.ActionLink("Back to gear categories", "Index")</p>
-    <p>@Html.ActionLink("Edit Category", "Edit", new { id = Model.CategoryId })</p>
-    <p>@Html.ActionLink("Delete Category", "Delete", new { id = Model.CategoryId })</p>
+      <div class="linksContainer col-md">
+        <p>@Html.ActionLink("Add new gear", "Create", "Gears")</p>
+        <p>@Html.ActionLink("Back to gear categories", "Index")</p>
+        <p>@Html.ActionLink("Edit Category", "Edit", new { id = Model.CategoryId })</p>
+        <p>@Html.ActionLink("Delete Category", "Delete", new { id = Model.CategoryId })</p>
+      </div>
   </div>
 </div>
