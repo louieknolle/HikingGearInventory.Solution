@@ -1,15 +1,59 @@
 ﻿@{
-  Layout = "_Layout";
-}
-
-<div class="viewContainer">
-  <div class="text-left">
-    <h3 class="display-4" id="welcome">Your one stop for creating your own gear database and making a packing list for your next trip!</h3>
-    <h4>Are you ready for adventure?</h4>
-    <div id="homeSeeCat">
-      <p>@Html.ActionLink("Create new gear category", "Create", "Categories", null, new {@class = "homeLink"})</p>
-      <p>@Html.ActionLink("Add some fresh gear", "Create", "Gears", null, new {@class = "homeLink"})</p>
-      <p>@Html.ActionLink("Start new packing list", "", "", null, new {@class = "homeLink"})</p>
+    Layout = null;
+ }
+<!DOCTYPE html>
+<html lang="en" id="homeHTML">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - The Gear Cave</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/styles.css">
+</head>
+<body id="homeBody">
+  <div class="container" id="homeContainer">
+    <div id="homeHeader">
+      <h1 id="homeTitle">The Gear Cave</h1>
+      <div class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container-fluid">
+                    <!-- <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">The Gear Cave</a> -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">   Home   </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="Index">  Gear Categories   </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Gears" asp-action="Index">   Gear List   </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">   Upcoming Trips   </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
     </div>
+
+
+
+    <!-- <div class="viewContainer">
+      <div class="text-left">
+        <h3 class="display-4" id="welcome">Your one stop for creating your own gear database and making a packing list for your next trip!</h3>
+        <h4>Are you ready for adventure?</h4>
+        <div id="homeSeeCat">
+          <p>@Html.ActionLink("Create new gear category", "Create", "Categories", null, new {@class = "homeLink"})</p>
+          <p>@Html.ActionLink("Add some fresh gear", "Create", "Gears", null, new {@class = "homeLink"})</p>
+          <p>@Html.ActionLink("Start new packing list", "", "", null, new {@class = "homeLink"})</p>
+        </div>
+      </div>
+    </div> -->
   </div>
-</div>
+</body>
+</html>
