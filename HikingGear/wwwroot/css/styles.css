@@ -124,7 +124,9 @@ body {
   background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%); */
   font-family: 'Roboto Condensed', sans-serif; 
   background-color: #AEB0AB;
-
+  background-image: url(https://images.unsplash.com/photo-1476362555312-ab9e108a0b7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
@@ -194,27 +196,29 @@ input, select {
 }
 
 .viewContainer {
-  color: #8516A0;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-family: 'Roboto Condensed', sans-serif; 
+  background-color: #fff;
+  border-radius: 1rem;
+  opacity: 0.75;
+  padding: 0.5rem;
 }
 
 .linksContainer {
   text-decoration: none;
-  font-size: 1.5rem;
-  color: #A01631;
+  font-size: .75rem;
   width: fit-content;
   
 }
 
 .linksContainer a {
   text-decoration: none;
-  color: #A01631;
   filter: drop-shadow(5px 5px 5px #666666);
   padding: .2rem .3rem;
   background-color: #e5e5e5;
   border-radius: 20rem;
   font-family: 'Roboto Mono', monospace;
+  font-size: 1rem;
 }
 
 .linksContainer a:hover {
