@@ -14,20 +14,8 @@ header {
   text-align: center;
 }
 
-.headerTitle {
-  display: inline-block;
-  font-size: 3rem;
-  color: #117460;
-}
-
-.headerLink {
-  position: absolute;
-  top: 2%;
-  left: 2%;
-}
-
 nav {
-  width: 80%;
+  width: 100%;
   margin: auto;
 }
 
@@ -35,6 +23,8 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  font-size: 2rem;
+  color: #16A085;
 }
 
 /* Provide sufficient contrast against white background */
@@ -54,6 +44,17 @@ a {
   border-color: #1861ac;
 }
 
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-nav {
+  margin-left: 30%;
+  display: flex;
+  align-items: center;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -70,6 +71,8 @@ html {
 }
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
+  width: 100%;
+  margin: auto;
 }
 
 .box-shadow {
@@ -102,7 +105,16 @@ body {
 h1, h2, h3, h4 {
   margin-bottom: 5%;
   font-family: 'Roboto Mono', monospace;
+}
 
+#welcome {
+  font-size: 2rem;
+  font-family: 'Roboto Condensed', sans-serif; 
+}
+
+.homeLink {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.25rem;
 }
 
 .createGearForm {
@@ -114,7 +126,7 @@ h1, h2, h3, h4 {
 label {
   font-size: 1.25rem;
   width: 40%;
-  background-color: #ffffff59;
+  background-color: #e5e5e5;
   margin-right: 0;
   border-radius: 20rem 0 0 20rem;
   color: black;
@@ -124,7 +136,7 @@ label {
 input, select {
   font-size: 1.25rem;
   width: 40%;
-  background-color: #ffffff59;
+  background-color: #e5e5e5;
   margin-left: 0;
   border-radius: 0 20rem 20rem 0;
   color: black;
@@ -137,7 +149,7 @@ input, select {
 
 .addNewBtn {
   border-radius: 20rem;
-  background-color: #ffffff40;
+  background-color: #e5e5e5;
   width: fit-content;
   justify-self: center;
   display: block;
@@ -155,6 +167,7 @@ input, select {
 .viewContainer {
   color: #8516A0;
   font-size: 1.5rem;
+  font-family: 'Roboto Condensed', sans-serif; 
 }
 
 .linksContainer {
@@ -170,8 +183,9 @@ input, select {
   color: #A01631;
   filter: drop-shadow(5px 5px 5px #666666);
   padding: .2rem .3rem;
-  background-color: #ffffff40;
+  background-color: #e5e5e5;
   border-radius: 20rem;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .linksContainer a:hover {
@@ -184,7 +198,7 @@ input, select {
   color: #A01631;
   filter: drop-shadow(5px 5px 5px #666666);
   padding: .2rem .3rem;
-  background-color: #ffffff40;
+  background-color: #e5e5e5;
   border-radius: 20rem;
 }
 
@@ -200,7 +214,7 @@ input, select {
   font-size: 1.25rem;
   width: fit-content;
   padding: .2rem .3rem;
-  background-color: #ffffff40;
+  background-color: #e5e5e5;
   margin-bottom: 4%;
   border-radius: 20rem;
   color: black;
@@ -224,5 +238,5 @@ input, select {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
-  background-color: aliceblue;
+  background-color: #e5e5e5;
 }
