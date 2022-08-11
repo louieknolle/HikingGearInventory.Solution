@@ -4,9 +4,12 @@
 
 <div class="viewContainer">
   <div class="text-left">
-    <h1 class="display-4">Welcome back!</h1>
+    <h3 class="display-4" id="welcome">Your one stop for creating your own gear database and making a packing list for your next trip!</h3>
+    <h4>Are you ready for adventure?</h4>
     <div id="homeSeeCat">
-      <p>@Html.ActionLink("See gear categories", "Index", "Categories", null, new {@class = "homeLink"})</p>
+      <p>@Html.ActionLink("Create new gear category", "Create", "Categories", null, new {@class = "homeLink"})</p>
+      <p>@Html.ActionLink("Add some fresh gear", "Create", "Gears", null, new {@class = "homeLink"})</p>
+      <p>@Html.ActionLink("Start new packing list", "", "", null, new {@class = "homeLink"})</p>
     </div>
   </div>
 </div>
