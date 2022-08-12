@@ -34,8 +34,8 @@ header {
   padding-left: 5%;
 }
 
-#homeHTML, #homeBody, #homeContainer, #homeHeader {
-  background-color: #cfd1cb;
+#homeHTML, body#homeBody, #homeContainer {
+  background: #AEB0AB;
 }
 
 .homeNavContainer {
