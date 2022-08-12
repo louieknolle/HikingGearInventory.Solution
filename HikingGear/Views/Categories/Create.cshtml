@@ -4,16 +4,18 @@
 
 @model HikingGear.Models.Category
 
-<div class="viewContainer">
+<div class="viewContainer row">
   <h3>New category</h3>
   @using (Html.BeginForm())
   {
-    <span class="labelSpan">@Html.LabelFor(model => model.Name)</span>
-    @Html.TextBoxFor(model => model.Name, new { @required = "required"})
-    <input type="submit" value="Add new category" class="addNewBtn" />
+      <div class="col-md-6">
+        <span class="labelSpan">@Html.LabelFor(model => model.Name)</span>
+        @Html.TextBoxFor(model => model.Name, new { @required = "required"})
+      
+        <input type="submit" value="Add new category" class="homeLink"/>
+      </div>
   }
-
-  <div class="linksContainer">
-    <p>@Html.ActionLink("Show all categories", "Index")</p>
+  <div class="col-md-6">
+    <button class="button-30">@Html.ActionLink("Show all categories", "Index", null, null, new {@class = "homeLink"})</button>
   </div>
 </div>
