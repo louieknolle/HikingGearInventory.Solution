@@ -4,7 +4,7 @@
 header {
   z-index: -1;
   /* background-color: aliceblue; */
-  margin: auto;
+  /* margin: auto; */
   width: 100%;
   height: auto;
   max-height: 240px;
