@@ -8,14 +8,14 @@
   <h3>New category</h3>
   @using (Html.BeginForm())
   {
-      <div class="col-md-6">
+      <div class="col-md-8">
         <span class="labelSpan">@Html.LabelFor(model => model.Name)</span>
         @Html.TextBoxFor(model => model.Name, new { @required = "required"})
       
         <input type="submit" value="Add new category" class="homeLink"/>
       </div>
   }
-  <div class="col-md-6">
+  <div class="col-md-4">
     <button class="button-30">@Html.ActionLink("Show all categories", "Index", null, null, new {@class = "homeLink"})</button>
   </div>
 </div>

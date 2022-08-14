@@ -15,27 +15,33 @@ header {
 }
 
 #homeHeader {
-  height: 50%;
-  width: auto; 
+  height: auto;
+  width: 80%;
   background-image: url(https://images.unsplash.com/photo-1476362555312-ab9e108a0b7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
   background-size: cover;
   background-repeat: no-repeat;
   margin: auto;
-  margin-top: 15%;
+  margin-top: 1%;
   margin-bottom: 15%;
   border-radius: 1rem;
   font-size: 1.2rem;
 }
 
 #homeTitle {
-  margin-top: 5%;
-  margin-bottom: 40%;
-  padding-top: 10%;
+  /* margin-top: 5%;
+  margin-bottom: 40%; */
+  padding-top: 60%;
   padding-left: 5%;
+  color: #AEB0AB;
 }
 
 #homeHTML, body#homeBody, #homeContainer {
   background: #AEB0AB;
+}
+
+#homebody {
+  margin-top: 5%;
+  top: 0;
 }
 
 .homeNavContainer {
@@ -253,7 +259,7 @@ input, select {
 }
 
 .labelSpan {
-  text-align: right;
+  text-align: center;
   width: 50%;
 }
 
@@ -264,7 +270,8 @@ input, select {
   border-radius: 1rem;
   opacity: 0.75;
   padding: 0.5rem;
-  width: fit-content;
+  width: 80%;
+  margin: auto;
 }
 
 div.viewContainer.row {
