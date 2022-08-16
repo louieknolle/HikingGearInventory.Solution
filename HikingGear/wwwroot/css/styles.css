@@ -152,7 +152,7 @@ body {
   box-sizing: border-box;
   color: black;
   cursor: pointer;
-  display: inline-block;
+  display: block;
   font-family: "JetBrains Mono",monospace;
   height: 3rem;
   justify-content: center;
@@ -329,6 +329,7 @@ form {
 
 .viewList {
   list-style: decimal;
+  margin-bottom: 2%;
 }
 .viewList a {
   font-size: 1.25rem;
@@ -349,6 +350,10 @@ form {
 .createGearForm {
   display: flex;
   flex-direction: column;
+}
+
+span.gearDetail {
+  font-size: 1.7rem;
 }
 
 .footer {
