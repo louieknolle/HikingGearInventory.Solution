@@ -30,9 +30,10 @@ header {
 #homeTitle {
   /* margin-top: 5%;
   margin-bottom: 40%; */
-  padding-top: 60%;
-  padding-left: 5%;
-  color: #AEB0AB;
+  padding-top: 40%;
+  padding-left: 1rem;
+  margin-left: 0;
+  color: #fff;
 }
 
 #homeHTML, body#homeBody, #homeContainer {
@@ -52,6 +53,11 @@ nav {
   width: 100%;
   margin: auto;
 
+}
+
+.nav-item1-home {
+  padding-left: 0;
+  margin-left: 0;
 }
 
 a.navbar-brand {
@@ -82,6 +88,7 @@ a {
 .container-fluid {
   display: flex;
   justify-content:flex-start;
+  padding: 0 1rem;
 }
 
 .navbar-nav {
@@ -135,7 +142,7 @@ body {
   background-size: cover;
 }
 
-.button-30, input.homeLink {
+.button-30, input.homeLink, #addNewGear {
   align-items: center;
   appearance: none;
   background-color: #FCFCFD;
@@ -145,7 +152,7 @@ body {
   box-sizing: border-box;
   color: black;
   cursor: pointer;
-  display: inline-flex;
+  display: inline-block;
   font-family: "JetBrains Mono",monospace;
   height: 3rem;
   justify-content: center;
@@ -168,9 +175,6 @@ body {
   width: fit-content;
 }
 
-.button-30 {
-  margin-bottom: .2rem;
-}
 
 .button-30:focus {
   box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
@@ -189,6 +193,7 @@ body {
 
 .button-30 a {
   text-decoration: none;
+  color: black;
 }
 
 .container {
@@ -318,10 +323,10 @@ form {
   filter: none;
 }
 
-.catList {
+.viewList {
   list-style: decimal;
 }
-.catList a {
+.viewList a {
   font-size: 1.25rem;
   width: fit-content;
   padding: .2rem .3rem;
@@ -332,7 +337,7 @@ form {
   filter: drop-shadow(5px 5px 5px #929292);
 }
 
-.catList:hover {
+.viewList:hover {
   color: #36395A;
   filter: none;
 }

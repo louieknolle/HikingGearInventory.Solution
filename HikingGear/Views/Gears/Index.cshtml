@@ -5,17 +5,23 @@
 @using HikingGear.Models;
 @model List<HikingGear.Models.Gear>;
 
-<h1>Items of gear</h1>
+<div class="viewContainer">
+  <h1>Items of gear</h1>
 
-@if (@Model.Count == 0)
-{
-  <h3>No gear has been added yet!</h3>
-} 
-
-@foreach (Gear gear in Model)
-{
-  <li>@Html.ActionLink($"{gear.Name}" , "Details", new { id = gear.GearId })</li>
-}
-
-<p>@Html.ActionLink("Add new gear", "Create")</p>
-<p>@Html.ActionLink("Back to Categories List", "Index", "Categories")</p>
+  <div class="row">
+    @if (@Model.Count == 0)
+    {
+      <h3>No gear has been added yet!</h3>
+    } 
+    <div class="col-md">
+      @foreach (Gear gear in Model)
+      {
+        <li class="viewList">@Html.ActionLink($"{gear.Name}" , "Details", new { id = gear.GearId })</li>
+      }
+    <!-- </div>
+    <div class="col-sm"> -->
+      <button class="button-30">@Html.ActionLink("Add new gear", "Create")</button >
+      <button class="button-30">@Html.ActionLink("Back to Categories List", "Index", "Categories")</button >
+    </div>
+  </div>
+</div>
