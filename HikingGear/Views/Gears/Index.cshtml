@@ -6,20 +6,20 @@
 @model List<HikingGear.Models.Gear>;
 
 <div class="viewContainer">
-  <h1>Items of gear</h1>
+  <h1>Gear</h1>
 
   <div class="row">
     @if (@Model.Count == 0)
     {
       <h3>No gear has been added yet!</h3>
     } 
-    <div class="col-md">
+    <div class="col-md-6">
       @foreach (Gear gear in Model)
       {
         <li class="viewList">@Html.ActionLink($"{gear.Name}" , "Details", new { id = gear.GearId })</li>
       }
-    <!-- </div>
-    <div class="col-sm"> -->
+    </div>
+    <div class="col-md-4">
       <button class="button-30">@Html.ActionLink("Add new gear", "Create")</button >
       <button class="button-30">@Html.ActionLink("Back to Categories List", "Index", "Categories")</button >
     </div>

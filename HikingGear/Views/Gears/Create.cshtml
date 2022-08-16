@@ -7,35 +7,35 @@
 <div class="viewContainer">
   <h3>Add a new piece of gear</h3>
 
-  <div class="createGearForm">
+  <div class="createGearForm row">
     @using (Html.BeginForm())
     {
-        <div class="formRow">
-          <span class="labelSpan">@Html.LabelFor(model => model.Brand)</span>
-          <span class="inputSpan">@Html.TextBoxFor(model => model.Brand, new { @required = "required"})</span>
+        <div class="col-md-8">
+          <div class="formRow">
+            <span class="labelSpan">@Html.LabelFor(model => model.Brand)</span>
+            <span class="inputSpan">@Html.TextBoxFor(model => model.Brand, new { @required = "required"})</span>
+          </div>
+          <div class="formRow">
+            <span class="labelSpan">@Html.LabelFor(model => model.Name)</span>
+            <span class="inputSpan">@Html.TextBoxFor(model => model.Name, new { @required = "required"})</span>
+          </div>
+          <div class="formRow">
+            <span class="labelSpan">@Html.LabelFor(model => model.Description)</span>
+            <span class="inputSpan">@Html.TextBoxFor(model => model.Description, new { @required = "required"})</span>
+          </div>
+          <div class="formRow">
+            <span class="labelSpan">@Html.LabelFor(model => model.PurchaseYear)</span>
+            <span class="inputSpan">@Html.TextBoxFor(model => model.PurchaseYear, new { @required = "required"})</span>
+          </div>
+          <div class="formRow">
+            <span class="labelSpan">@Html.Label("Select category")</span>
+            <span class="inputSpan">@Html.DropDownList("CategoryId", null, "No category")</span>
+          </div>
         </div>
-        <div class="formRow">
-          <span class="labelSpan">@Html.LabelFor(model => model.Name)</span>
-          <span class="inputSpan">@Html.TextBoxFor(model => model.Name, new { @required = "required"})</span>
+        
+        <div class="col-md-3">
+          <input type="submit" value="Add new gear" class="button-30" id="newGearSubmit"/>
         </div>
-        <div class="formRow">
-          <span class="labelSpan">@Html.LabelFor(model => model.Description)</span>
-          <span class="inputSpan">@Html.TextBoxFor(model => model.Description, new { @required = "required"})</span>
-        </div>
-        <div class="formRow">
-          <span class="labelSpan">@Html.LabelFor(model => model.PurchaseYear)</span>
-          <span class="inputSpan">@Html.TextBoxFor(model => model.PurchaseYear, new { @required = "required"})</span>
-        </div>
-        <div class="formRow">
-          <span class="labelSpan">@Html.Label("Select category")</span>
-          <span class="inputSpan">@Html.DropDownList("CategoryId")</span>
-        </div>
-
-        <button class="button-30" id="addNewGear"><input type="submit" value="Add new gear" /></button>
     }
-  </div>
-
-  <div>
-    <button class="button-30">@Html.ActionLink("Show all gear", "Index")</button>
   </div>
 </div>

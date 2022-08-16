@@ -142,7 +142,7 @@ body {
   background-size: cover;
 }
 
-.button-30, input.homeLink, #addNewGear {
+.button-30, input.homeLink {
   align-items: center;
   appearance: none;
   background-color: #FCFCFD;
@@ -208,6 +208,10 @@ h1, h2, h3, h4 {
 #welcome {
   font-size: 2rem;
   font-family: 'Roboto Condensed', sans-serif; 
+}
+
+#newGearSubmit {
+  margin-left: 1rem;
 }
 
 .homeLink {
@@ -337,7 +341,7 @@ form {
   filter: drop-shadow(5px 5px 5px #929292);
 }
 
-.viewList:hover {
+.viewList a:hover {
   color: #36395A;
   filter: none;
 }
