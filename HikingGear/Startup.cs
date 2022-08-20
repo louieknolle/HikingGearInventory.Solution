@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using HikingGear.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace HikingGear
 {
@@ -27,12 +28,18 @@ namespace HikingGear
       services.AddEntityFrameworkMySql()
         .AddDbContext<HikingGearContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
+
+        services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<HikingGearContext>()
+                .AddDefaultTokenProviders();
     }
 
     public void Configure(IApplicationBuilder app)
     {
       app.UseDeveloperExceptionPage();
+      app.UseAuthentication(); 
       app.UseRouting();
+      app.UseAuthorization();
 
       app.UseEndpoints(routes =>
       {

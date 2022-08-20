@@ -25,6 +25,7 @@ header {
   margin-bottom: 15%;
   border-radius: 1rem;
   font-size: 1.2rem;
+  color: #fff;
 }
 
 #homeTitle {
@@ -34,6 +35,10 @@ header {
   padding-left: 1rem;
   margin-left: 0;
   color: #fff;
+}
+
+#homeSubTitle {
+  padding-left: 1rem;
 }
 
 #homeHTML, body#homeBody, #homeContainer {

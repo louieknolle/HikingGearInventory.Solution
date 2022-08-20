@@ -1,8 +1,9 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace HikingGear.Models
 {
-  public class HikingGearContext : DbContext
+  public class HikingGearContext : IdentityDbContext<ApplicationUser>
   {
     public DbSet<Category> Categories { get; set; }
     public DbSet<Gear> Gears { get; set; }
