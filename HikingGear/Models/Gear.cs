@@ -14,6 +14,7 @@ namespace HikingGear.Models
     public string Name { get; set; }
     public int PurchaseYear { get; set; }
     public string Description { get; set; }
+    public virtual ApplicationUser User { get; set; } 
 
     public virtual ICollection<CategoryGear> JoinEntities { get;}
   }

@@ -4,21 +4,31 @@ using Microsoft.AspNetCore.Mvc;
 using HikingGear.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace HikingGear.Controllers
 {
+  [Authorize]
   public class GearsController : Controller
   {
     private readonly HikingGearContext _db;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-    public GearsController(HikingGearContext db)
+    public GearsController(UserManager<ApplicationUser> userManager, HikingGearContext db)
     {
+      _userManager = userManager;
       _db = db;
     }
 
-    public ActionResult Index()
+    public async Task<ActionResult> Index()
     {
-      return View(_db.Gears.ToList());
+        var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var currentUser = await _userManager.FindByIdAsync(userId);
+        var userGears = _db.Gears.Where(entry => entry.User.Id == currentUser.Id).ToList();
+        return View(userGears);
     }
 
     public ActionResult Create()
@@ -28,17 +38,19 @@ namespace HikingGear.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Gear gear, int CategoryId)
+    public async Task<ActionResult> Create(Gear gear, int CategoryId)
     {
-      _db.Gears.Add(gear);
-      _db.SaveChanges();
-      if (CategoryId != 0)
-      {
-        _db.CategoryGear.Add(new CategoryGear() { CategoryId = CategoryId, GearId = gear.GearId });
+        var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var currentUser = await _userManager.FindByIdAsync(userId);
+        gear.User = currentUser;
+        _db.Gears.Add(gear);
         _db.SaveChanges();
-      }
-      return RedirectToAction("Index", "Categories", null);
-      
+        if (CategoryId != 0)
+        {
+            _db.CategoryGear.Add(new CategoryGear() { CategoryId = CategoryId, GearId = gear.GearId });
+        }
+        _db.SaveChanges();
+        return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
