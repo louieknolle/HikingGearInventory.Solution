@@ -4,17 +4,22 @@
 
 @model HikingGear.Models.Category
 
-<h2>Edit</h2>
+<div class="viewContainer row">
+  <h2>Edit @Html.DisplayFor(model => model.Name)</h2>
 
-<h4>Edit this category: @Html.DisplayFor(model => model.Name)</h4>
+  <!-- <h4>Edit this category: @Html.DisplayFor(model => model.Name)</h4> -->
+  <div class="col-md-8"
+    @using (Html.BeginForm())
+    {
+      @Html.HiddenFor(model => model.CategoryId)
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.CategoryId)
+      <span class="labelSpan">@Html.LabelFor(model => model.Name)</span>
+      @Html.EditorFor(model => model.Name)
 
-  @Html.LabelFor(model => model.Name)
-  @Html.EditorFor(model => model.Name)
-
-  <input type="submit" value="Save" />
-}
-<p>@Html.ActionLink("Back to category list", "Index")</p>
+      <input type="submit" value="Save" class="homeLink"/>
+    }
+  <div>
+  <div class="col-md-4">
+    <button class="button-30">@Html.ActionLink("Back to category list", "Index")</button>
+  </div>
+</div>

@@ -3,12 +3,14 @@
 }
 
 @model HikingGear.Models.Gear
+<div class="viewContainer">
+  <h2>Confirm deletion of @Html.DisplayFor(model => model.Brand) @Html.DisplayFor(model => model.Name)</h2>
+  <hr />
 
-<h2>Are you sure you want to delete this?</h2>
 
-@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
-@using (Html.BeginForm())
-{
-  <input type="submit" value="Delete" />
-}
-@Html.ActionLink("Back to List", "Index")
+  @using (Html.BeginForm())
+  {
+    <input type="submit" value="Delete" class="homeLink"/>
+  }
+  <button class="button-30">@Html.ActionLink("Back to List", "Index")</button>
+</div>

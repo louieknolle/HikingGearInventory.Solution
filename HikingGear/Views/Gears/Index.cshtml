@@ -3,20 +3,25 @@
 }
 
 @using HikingGear.Models;
-@model List<HikingGear.Models.Gear>;
+@model IEnumerable<HikingGear.Models.Gear>
 
 <div class="viewContainer">
   <h1>Gear for @User.Identity.Name</h1>
 
   <div class="row">
-    @if (Model.Any())
-    {
-      <li class="viewList">@Html.ActionLink($"{gear.Name}" , "Details", new { id = gear.GearId })</li>
-    } 
     <div class="col-md-6">
-      @foreach (Gear gear in Model)
+      @if (Model.Any())
       {
-        <h3>No gear has been added yet!</h3>
+        <ul>
+          @foreach (Gear gear in Model)
+          {
+            <li class="viewList">@Html.ActionLink($"{gear.Name}" , "Details", new { id = gear.GearId })</li>
+          }
+        </ul>
+      } 
+      else 
+      {
+          <h3>No gear has been added yet!</h3>
       }
     </div>
     <div class="col-md-4">

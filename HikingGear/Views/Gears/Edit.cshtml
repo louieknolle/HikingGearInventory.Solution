@@ -4,29 +4,32 @@
 
 @model HikingGear.Models.Gear
 
-<div class="viewContainer">
-  <h2>Edit this Gear</h2>
+<div class="viewContainer row">
+  <h2>Edit @Html.DisplayFor(model => model.Brand) @Html.DisplayFor(model => model.Name)</h2>
+  <hr />
+    @using (Html.BeginForm())
+    {
+    <div class="col-md-6">
+      @Html.HiddenFor(model => model.GearId)
 
-  <h4>@Html.DisplayFor(model => model.Brand) @Html.DisplayFor(model => model.Name)</h4>
+      <span class="labelSpan">@Html.LabelFor(model => model.Brand)</span>
+      @Html.EditorFor(model => model.Brand)
 
-  @using (Html.BeginForm())
-  {
-    @Html.HiddenFor(model => model.GearId)
+      <span class="labelSpan">@Html.LabelFor(model => model.Name)</span>
+      @Html.EditorFor(model => model.Name)
 
-    @Html.LabelFor(model => model.Brand)
-    @Html.EditorFor(model => model.Brand)
-    @Html.LabelFor(model => model.Name)
-    @Html.EditorFor(model => model.Name)
-    @Html.LabelFor(model => model.Description)
-    @Html.TextBoxFor(model => model.Description)
-    @Html.LabelFor(model => model.PurchaseYear)
-    @Html.TextBoxFor(model => model.PurchaseYear)
+      <span class="labelSpan">@Html.LabelFor(model => model.Description)</span>
+      @Html.TextBoxFor(model => model.Description)
 
-    @Html.Label("Select category")
-    @Html.DropDownList("CategoryId", null, "No Category")
+      <span class="labelSpan">@Html.LabelFor(model => model.PurchaseYear)</span>
+      @Html.TextBoxFor(model => model.PurchaseYear)
 
-    <input type="submit" value="Save" />
+      <span class="labelSpan">@Html.Label("Select category")</span>
+      @Html.DropDownList("CategoryId", null, "No Category")
+    </div>
+      <input type="submit" value="Save" class="homeLink"/>
   }
-
-  <p>@Html.ActionLink("Back to list", "Index")</p>
+      <div class="col-md-4">
+        <button class="button-30">@Html.ActionLink("Back to list", "Index")</button>
+      </div>
 </div>

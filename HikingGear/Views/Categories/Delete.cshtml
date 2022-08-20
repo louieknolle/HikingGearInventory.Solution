@@ -3,12 +3,13 @@
 }
 
 @model HikingGear.Models.Category
-
-<h2>Confirm deletion of hiking gear category</h2>
-
-@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
-@using (Html.BeginForm())
-{
-  <input type="submit" value="Delete" />
-}
-@Html.ActionLink("Back to Category List", "Index")
+<div class="viewContainer">
+  <h2>Confirm Deletion of @Html.DisplayFor(model => model.Name)</h2>
+  <hr />
+  
+  @using (Html.BeginForm())
+  {
+    <input type="submit" value="Delete" class="homeLink"/>
+  }
+  <button class="button-30">@Html.ActionLink("Back to Category List", "Index")</button>
+</div>

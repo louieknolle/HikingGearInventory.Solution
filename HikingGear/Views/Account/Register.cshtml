@@ -5,19 +5,20 @@
 @using HikingGear.ViewModels
 
 @model RegisterViewModel
+<div class="viewContainer">
+  <h2>Register a new user</h2>
+  <hr />
+  @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+  {
+      <span class="labelSpan">@Html.LabelFor(user => user.Email)</span>
+      @Html.TextBoxFor(user=> user.Email)
 
-<h2>Register a new user</h2>
-<hr />
-@using (Html.BeginForm("Register", "Account", FormMethod.Post))
-{
-    @Html.LabelFor(user => user.Email)
-    @Html.TextBoxFor(user=> user.Email)
+      <span class="labelSpan">@Html.LabelFor(user=> user.Password)</span>
+      @Html.PasswordFor(user=> user.Password)
 
-    @Html.LabelFor(user=> user.Password)
-    @Html.PasswordFor(user=> user.Password)
+      <span class="labelSpan">@Html.LabelFor(user=> user.ConfirmPassword)</span>
+      @Html.PasswordFor(user=> user.ConfirmPassword)
 
-    @Html.LabelFor(user=> user.ConfirmPassword)
-    @Html.PasswordFor(user=> user.ConfirmPassword)
-
-    <input type="submit" value="Register" />
-}
+      <input type="submit" value="Register" class="homeLink"/>
+  }
+</div>

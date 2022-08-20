@@ -3,19 +3,24 @@
 }
 
 @model HikingGear.Models.Gear
+<div class="viewContainer row">
+  <h2>Add a gear category</h2>
+  <hr />
+  <div class="col-md-6">
+    <h4>Select additional category for: @Html.DisplayFor(model => model.Brand) @Html.DisplayFor(model => model.Name) </h4>
 
-<h2>Add a category</h2>
+    @using (Html.BeginForm())
+    {
+      @Html.HiddenFor(model => model.GearId)
 
-<h4>Select category for this gear: @Html.DisplayFor(model => model.Brand) @Html.DisplayFor(model => model.Name) </h4>
+      <span class="labelSpan">@Html.Label("Select category")</span>
+      @Html.DropDownList("CategoryId")
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.GearId)
-
-  @Html.Label("Select category")
-  @Html.DropDownList("CategoryId")
-
-  <input type="submit" value="Save" />
-}
-
-<p>@Html.ActionLink("Back to list", "Index")</p>
+      <input type="submit" value="Save" class="homeLink"/>
+    }
+  </div>
+  
+  <div class="col-md-6">
+    <button class="button-30">@Html.ActionLink("Back to list", "Index")</button >
+  </div>
+</div>
