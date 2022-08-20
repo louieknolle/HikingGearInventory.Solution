@@ -3,22 +3,31 @@ using Microsoft.AspNetCore.Mvc;
 using HikingGear.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace HikingGear.Controllers 
 {
+  [Authorize]
   public class CategoriesController : Controller
   {
     private readonly HikingGearContext _db;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-    public CategoriesController(HikingGearContext db)
+    public CategoriesController(UserManager<ApplicationUser> userManager, HikingGearContext db)
     {
+      _userManager = userManager;
       _db = db;
     }
 
-    public ActionResult Index()
+    public async Task<ActionResult> Index()
     {
-      List<Category> model = _db.Categories.ToList();
-      return View(model);
+        var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var currentUser = await _userManager.FindByIdAsync(userId);
+        var userCategories = _db.Categories.Where(entry => entry.User.Id == currentUser.Id).ToList();
+        return View(userCategories);
     }
 
     public ActionResult Create()
@@ -27,11 +36,19 @@ namespace HikingGear.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Category category)
+    public async Task<ActionResult> Create(Category category, int GearId)
     {
-      _db.Categories.Add(category);
-      _db.SaveChanges();
-      return RedirectToAction("Index");
+        var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var currentUser = await _userManager.FindByIdAsync(userId);
+        category.User = currentUser;
+        _db.Categories.Add(category);
+        _db.SaveChanges();
+        if (GearId != 0)
+        {
+            _db.CategoryGear.Add(new CategoryGear() { GearId = GearId, CategoryId = category.CategoryId });
+        }
+        _db.SaveChanges();
+        return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
