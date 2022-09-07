@@ -1,5 +1,10 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using System;
+using System.Threading.Tasks;
+using RestSharp;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace HikingGear
 {

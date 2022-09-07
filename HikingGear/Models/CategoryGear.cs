@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace HikingGear.Models
 {
   public class CategoryGear
@@ -7,5 +9,6 @@ namespace HikingGear.Models
     public int CategoryId { get; set; }
     public virtual Gear Gear { get; set; }
     public virtual Category Category { get; set; }
+    // public virtual ApplicationUser User { get; set; } 
   }
 }

@@ -33,10 +33,10 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">   Upcoming Trips   </a>
                             </li>
                             <li class="nav-item nav-item1-home">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Index">  Register   </a>
+                                <a class="nav-link text-dark" asp-area="Register" asp-controller="Account" asp-action="Register">  Register   </a>
                             </li>
                             <li class="nav-item nav-item1-home">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Index">  Login  </a>
+                                <a class="nav-link text-dark" asp-area="Login" asp-controller="Account" asp-action="Login">  Login  </a>
                             </li>
                         </ul>
                     </div>
@@ -44,5 +44,8 @@
             </nav>
     </div>
   </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
 </html>

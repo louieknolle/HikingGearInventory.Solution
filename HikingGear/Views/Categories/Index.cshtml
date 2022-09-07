@@ -6,7 +6,7 @@
 @model IEnumerable<HikingGear.Models.Category>
 
 <div class="viewContainer">
-  <h1>Gear Categories</h1>
+  <h1>Gear Categories @User.Identity.Name</h1>
     <div class="row">
       <div class="col-md-6">
         @if (Model.Any())
@@ -24,8 +24,8 @@
         }
       </div>
       <div class="col-md-4">
-        <button class="button-30">@Html.ActionLink("Add new category", "Create", null, null, new {@class = "homeLink"})</button>
-        <button class="button-30">@Html.ActionLink("See all gear items", "Index", "Gears", null, new {@class = "homeLink"})</button>
+        <button class="button-30">@Html.ActionLink("Add new category", "Create", null, null, new {@class = ""})</button>
+        <button class="button-30">@Html.ActionLink("See all gear items", "Index", "Gears", null, new {@class = ""})</button>
       </div>
     </div>
 </div>
